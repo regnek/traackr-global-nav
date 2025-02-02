@@ -143,29 +143,6 @@ table {
     src: url("https://s3.us-east-1.amazonaws.com/ds-assets.traackr.com/fonts/traackr-displaay/bold/TraackrDisplaay-Bold.woff2") format("woff2");
   }
 
-:root {
-	--glow-purple: #6246B4;
-	--desktop-content--x-padding: 24px;
-	--desktop-content--width: calc(100% - var(--desktop-content--x-padding) * 2);
-	--transition-duration-short: 75ms;
-	--transition-duration: .15s;
-	--transition-duration-med: 225ms;
-	--transition-duration-long: .3s;
-	--transition-duration-xlong: .45s;
-	box-sizing: border-box;
-	cursor: default;
-	font-family: Inter, Helvetica Neue, Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	-ms-text-size-adjust: 100%;
-	-moz-font-smoothing: auto;
-	-webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: auto;
-	line-height: 1.75;
-	text-rendering: optimizeLegibility;
-	vertical-align: top
-}
-
 @media (min-width: 769px) and (max-width: 1120px) {
 	:root {
 		--desktop-content--x-padding: 48px
@@ -326,6 +303,14 @@ a {
 }
 
 ._header_znbpc_12 {
+    --glow-purple: #6246B4;
+    --desktop-content--x-padding: 24px;
+    --desktop-content--width: calc(100% - var(--desktop-content--x-padding) * 2);
+    --transition-duration-short: 75ms;
+    --transition-duration: .15s;
+    --transition-duration-med: 225ms;
+    --transition-duration-long: .3s;
+    --transition-duration-xlong: .45s;
 	--header-color-black-1: #727272;
 	--header-color-black-2: #0d0e10;
 	--header-color-black-3: #2a2b2d;
@@ -380,8 +365,12 @@ a {
 	--dropdown-body--height: 0;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: auto;
 	-moz-osx-font-smoothing: grayscale;
-	position: sticky;
+    text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+	position: relative;
 	top: 0;
 	max-width: 100%;
 	visibility: visible !important;
@@ -1182,7 +1171,8 @@ a {
 	border: none;
 	background-color: transparent;
 	position: relative;
-	cursor: pointer
+	cursor: pointer;
+    line-height: 3.5rem;
 }
 
 ._ctaLinkButton_sly0r_1:after {
@@ -1235,7 +1225,7 @@ a {
 	--desktop-drawer__height-rounding-fix: 1px;
 	--desktop-drawer__padding-top: calc(40px + var(--desktop-drawer__height-rounding-fix));
 	--desktop-drawer__body-grid-margin-bottom: 24px;
-	display: none
+	display: none;
 }
 
 @media (min-width: 1120px) {
