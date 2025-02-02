@@ -1097,6 +1097,7 @@ a {
 
     ._ctaResponsiveButtonLink_12l1f_36 {
         background: #fff;
+        margin-right: 1rem;
     }
 
     ._ctaResponsiveButtonLink_12l1f_36:hover,
@@ -1206,7 +1207,8 @@ a {
 	bottom: 0;
 	border-bottom: 3px solid var(--glow-purple);
 	opacity: 0;
-	transition: opacity var(--transition-duration-long)
+	transition: opacity var(--transition-duration-long);
+    display: none;
 }
 
 ._ctaLinkButton_sly0r_1:hover:after {
@@ -1251,29 +1253,57 @@ a {
 	display: none;
 }
 
+#siteHeaderArrow {
+    --siteHeaderArrowOffset: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: -6px 0 0 0;
+    width: 12px;
+    height: 12px;
+    transform: translateY(12px) translateX(var(--siteHeaderArrowOffset)) rotate(45deg);
+    border-radius: 3px 0 0 0;
+    background-color: #fff;
+    box-shadow: -3px -3px 5px rgba(82, 95, 127, .04);
+    transition-property: transform;
+    transition-duration: 250ms;
+    z-index: 9;
+}
+
+#siteHeaderArrow.show-arrow {
+    transform: translateY(0) translateX(var(--siteHeaderArrowOffset)) rotate(45deg);
+}
+
 @media (min-width: 1120px) {
 	._flyoutWrapper_1bx67_1 {
+        --translateX-value: 0;
 		grid-template-columns: var(--desktop-main-template-columns);
 		grid-template-rows: 1fr var(--dropdown-footer--height);
 		display: grid;
 		grid-column: full-width;
 		width: auto;
+        height: 0;
 		position: absolute;
 		max-height: calc((100vh - var(--header--bottom-position)) * .9);
-		height: calc(var(--dropdown-body--height) + var(--desktop-drawer__body-grid-margin-bottom) + var(--desktop-drawer__padding-top) + var(--dropdown-footer--height));
 		padding-top: var(--desktop-drawer__padding-top);
 		background-color: var(--header-color-white-1);
 		box-shadow: 0 1rem 4rem #22222222;
 		opacity: 0;
-        border-radius: 1.75rem;
+        border-radius: 1rem;
 		bottom: var(--header--height);
-		transition: transform .3s ease-in, bottom .3s ease-in, opacity .3s ease-out, height .15s
+        transform: translateY(100%) translateX(var(--translateX-value));
+        will-change: transform, width, height;
+		transition: 250ms;
+        transition-property: transform, width, height;
+        z-index: -1;
 	}
 
 	._flyoutWrapper_1bx67_1.state--open {
 		opacity: 1;
+        height: calc(var(--dropdown-body--height) + var(--desktop-drawer__body-grid-margin-bottom) + var(--desktop-drawer__padding-top) + var(--dropdown-footer--height));
 		bottom: var(--desktop-drawer__height-rounding-fix);
-		transform: translateY(100%)
+		transform: translateY(100%) translateX(var(--translateX-value));
+        z-index: 2;
 	}
 
 	._flyoutWrapper_1bx67_1 ._flyoutRightBackground_1bx67_31 {
