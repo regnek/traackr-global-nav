@@ -98,10 +98,10 @@
                 </button>
             </div>
         </nav>
-                <div class="_flyoutWrapper_1bx67_1 flyoutWrapper _flyoutWrapper--state-open_1bx67_26">
+                <div class="_flyoutWrapper_1bx67_1 flyoutWrapper" id="flyoutWrapper">
                     <div class="_flyoutTabPanelsWrapper_1bx67_41 flyoutTabPanelsWrapper">
                         <div class="_flyoutTabPanels_1bx67_41 flyoutTabPanels">
-                            <div id="product-tab-panel" role="tabpanel" aria-labelledby="product-tab" class="global-navigation-tab-panel _tabPanel_1bx67_53 global-navigation-open-tab">
+                            <div id="product-tab-panel" role="tabpanel" aria-labelledby="product-tab" class="global-navigation-tab-panel _tabPanel_1bx67_53">
                                 <div class="_tabPanelLeftArea_1bx67_77">
                                     <div class="_tabSection_1bx67_88">
                                         <span class="_tabSection__name_1bx67_114">PLATFORM</span>
@@ -1060,6 +1060,42 @@
         </div>
     </header>
 
-    <script src="js/app.js"></script>
+    <script>
+        const traackrGlobalNavigation = document.getElementById('traackr-global-navigation'),
+            menuPanel = document.getElementById('flyoutWrapper');
+
+        traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('mouseover', () => {
+                traackrGlobalNavigation.querySelectorAll('.global-navigation-tab-panel').forEach(panel => {
+                    const targetId = tab.getAttribute('aria-controls');
+                    if (panel.id == targetId) {
+                        menuPanel.classList.add('state--open');
+                        panel.classList.add('global-navigation-open-tab');
+                    } else {
+                        panel.classList.remove('global-navigation-open-tab');
+                    }
+                });
+            });
+
+            tab.addEventListener('mouseout', e => {
+                if (e.toElement != menuPanel) {
+                    menuPanel.classList.remove('state--open');
+                }
+            });
+        });
+
+        menuPanel.addEventListener('mouseout', e => {
+            let a = e.toElement;
+            const els = [];
+            while (a) {
+                els.unshift(a.id);
+                a = a.parentNode;
+            }
+
+            if (!els.includes('flyoutWrapper')) {
+                menuPanel.classList.remove('state--open');
+            }
+        });
+    </script>
 </body>
 </html>

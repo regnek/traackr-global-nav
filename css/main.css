@@ -1255,7 +1255,7 @@ a {
 		transition: transform .3s ease-in, bottom .3s ease-in, opacity .3s ease-out, height .15s
 	}
 
-	._flyoutWrapper_1bx67_1._flyoutWrapper--state-open_1bx67_26 {
+	._flyoutWrapper_1bx67_1.state--open {
 		opacity: 1;
 		bottom: var(--desktop-drawer__height-rounding-fix);
 		transform: translateY(100%)
