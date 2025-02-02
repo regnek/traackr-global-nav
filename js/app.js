@@ -40,5 +40,6 @@ menuPanel.addEventListener('mouseout', e => {
 
     if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow')) {
         menuPanel.classList.remove('state--open');
+        siteHeaderArrow.classList.remove('show-arrow');
     }
 });

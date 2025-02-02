@@ -347,7 +347,7 @@ a {
 	--header-color-purple-1: #6246B4;
 	--header-color-purple-2: #796eff;
 	--header-color-green-1: #25e8c8;
-	--header-text-color: var(--header-color-black-1);
+	--header-text-color: var(--color-gray-70);
 	--header-text-hover-color: var(--header-color-black-2);
 	--header-background-color: var(--header-color-white-1);
 	--header-right-hover-color: var(--header-color-black-2);
@@ -1437,7 +1437,7 @@ a {
 
 @media (min-width: 1360px) {
 	._flyoutWrapper_1bx67_1 {
-		--desktop-drawer__x-section-padding: 0.5rem;
+		--desktop-drawer__x-section-padding: 1rem;
 	}
 }
 
@@ -1502,10 +1502,10 @@ a {
 
 ._card-link_8j75l_1 ._card-link__name_8j75l_8 {
 	position: relative;
-	font-size: 14px;
-	font-weight: 400;
-	color: var(--header-color-black-4);
-	line-height: 21px;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--color-gray-90);
+	line-height: 150%;
 	display: flex;
 	flex-wrap: nowrap
 }
@@ -1552,20 +1552,33 @@ a {
 	margin-bottom: 12px !important
 }
 
-._card-link_8j75l_1:hover:before {
-	--extra-padding: 10px;
+._header_znbpc_12 ul {
+    width: calc(100% - 1rem);
+}
+
+._card-link_8j75l_1:hover ._card-link__name_8j75l_8 {
+    color: var(--color-gray-95);
+}
+
+._card-link_8j75l_1::before {
+    --extra-padding: 0.5rem;
 	content: "";
 	position: absolute;
 	border-radius: 4px;
-	width: calc(100% + var(--extra-padding) * 2);
+	width: calc(100% + var(--extra-padding) * 1.5);
 	height: calc(100% + var(--extra-padding) * 2);
 	top: calc(-1 * var(--extra-padding));
 	left: calc(-1 * var(--extra-padding));
-	background-color: var(--link-card__background-color, var(--color-gray-10));
+	background-color: var(--color-gray-10);
 	z-index: -1;
-	opacity: 1;
-	transform: scale(1.1);
-	transition: opacity 80ms linear
+	opacity: 0;
+    scale(1);
+    transition: 80ms linear
+}
+
+._card-link_8j75l_1:hover:before {
+    opacity: 1;
+	transform: scale(1.05);
 }
 
 ._card-link_8j75l_1:hover ._card-link__name_8j75l_8>svg:last-child {
@@ -1584,7 +1597,7 @@ a {
 
 ._icon_423ua_1 {
     --icon-color: var(--black-1000);
-    fill: var(--icon-color);
+    fill: var(--header-text-color);
   }
   ._cta-base_1vr5j_1 {
     background-color: #0d0e10;
