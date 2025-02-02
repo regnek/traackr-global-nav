@@ -190,6 +190,8 @@ table {
 	}
 }
 
+
+
 h1 {
 	font-size: 40px;
 	font-weight: 500;
@@ -1380,6 +1382,13 @@ a {
 		height: 1px;
 		background-color: var(--header-color-grey-3)
 	}
+}
+
+@media screen and (min-width: 101.25rem) {
+    ._main-navigation_znbpc_74 {
+        width: 100rem;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 1360px) {
