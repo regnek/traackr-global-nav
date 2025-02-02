@@ -1195,7 +1195,7 @@ a {
 	border: none;
 	background-color: transparent;
 	position: relative;
-	cursor: pointer;
+	cursor: default;
     line-height: 3.5rem;
 }
 

@@ -23,7 +23,7 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     });
 
     tab.addEventListener('mouseout', e => {
-        if (e.toElement != menuPanel && e.toElement != siteHeaderArrow) {
+        if (e.toElement != menuPanel && e.toElement != siteHeaderArrow && e.toElement != tab) {
             menuPanel.classList.remove('state--open');
             siteHeaderArrow.classList.remove('show-arrow');
             menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
@@ -39,7 +39,7 @@ menuPanel.addEventListener('mouseout', e => {
         a = a.parentNode;
     }
 
-    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow')) {
+    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow') && e.toElement != tab) {
         menuPanel.classList.remove('state--open');
         siteHeaderArrow.classList.remove('show-arrow');
         menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
