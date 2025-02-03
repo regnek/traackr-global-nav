@@ -9,6 +9,8 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('mouseover', () => {
         activeTab = tab;
 
+        tab.classList.add('--active');
+
         const distanceFromLeft = tab.getBoundingClientRect().left,
               tabWidth = tab.getBoundingClientRect().width;
         siteHeaderArrow.style.setProperty('--siteHeaderArrowOffset', `${(distanceFromLeft + tabWidth / 2) - 12}px`);
@@ -31,6 +33,7 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
             menuPanel.classList.remove('state--open');
             siteHeaderArrow.classList.remove('show-arrow');
             menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
+            tab.classList.remove('--active');
         }
     });
 });
@@ -43,9 +46,12 @@ menuPanel.addEventListener('mouseout', e => {
         a = a.parentNode;
     }
 
-    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow') && e.toElement != activeTab) {
+    console.log(els, activeTab.getAttribute('aria-controls'));
+
+    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow') && !els.includes(activeTab.getAttribute('aria-controls'))) {
         menuPanel.classList.remove('state--open');
         siteHeaderArrow.classList.remove('show-arrow');
         menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
+        activeTab.classList.remove('--active');
     }
 });
