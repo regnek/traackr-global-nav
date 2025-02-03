@@ -1055,7 +1055,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	padding: 0 1.25rem;
-    height: 2.5rem;
+    height: 2.25rem;
 	align-self: center;
 	color: var(--color-gray-95);
     background: var(--color-gray-10);
@@ -1074,14 +1074,14 @@ a {
 @media (min-width: 1120px) {
     ._ctaResponsiveButtonLink_12l1f_36,
 	._ctaResponsiveButtonLink_12l1f_37 {
-		font-size: 1rem;
+		font-size: 0.875rem;
         font-weight: 600;
 		padding: 0 1.25rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-decoration: none;
-        height: 2.5rem;
+        height: 2.25rem;
 		transition-property: color;
 		transition-duration: var(--transition-duration-long);
 		color: var(--color-gray-95);
@@ -1138,7 +1138,7 @@ a {
 }
 
 ._ctaLinkLink_zj9ee_1 {
-	font-size: 1rem;
+	font-size: 0.875rem;
 	padding: 0 1rem;
 	display: flex;
 	justify-content: center;
@@ -1183,7 +1183,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-weight: 500;
 	text-decoration: none;
 	transition-property: color, border;
