@@ -3,11 +3,15 @@ const traackrGlobalNavigation = document.getElementById('traackr-global-navigati
       menuPanel = document.getElementById('flyoutWrapper'),
       siteHeaderArrow = document.getElementById('siteHeaderArrow');
 
+let activeTab;
+
 traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('mouseover', () => {
+        activeTab = tab;
+
         const distanceFromLeft = tab.getBoundingClientRect().left,
               tabWidth = tab.getBoundingClientRect().width;
-        siteHeaderArrow.style.setProperty('--siteHeaderArrowOffset', ((distanceFromLeft + tabWidth / 2) - 8) + 'px');
+        siteHeaderArrow.style.setProperty('--siteHeaderArrowOffset', `${(distanceFromLeft + tabWidth / 2) - 12}px`);
         siteHeaderArrow.classList.add('show-arrow');
         menuPanel.style.setProperty('--translateX-value', distanceFromLeft - 80 + 'px');
         menuPanel.classList.add('state--open');
@@ -39,8 +43,7 @@ menuPanel.addEventListener('mouseout', e => {
         a = a.parentNode;
     }
 
-    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow')) {
-        console.log(els.indexOf('-tab') > 0);
+    if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow') && e.toElement != activeTab) {
         menuPanel.classList.remove('state--open');
         siteHeaderArrow.classList.remove('show-arrow');
         menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
