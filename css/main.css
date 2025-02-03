@@ -1285,7 +1285,7 @@ a {
         height: auto;
 		position: absolute;
 		max-height: calc((100vh - var(--header--bottom-position)) * .9);
-		padding-top: var(--desktop-drawer__padding-top);
+		padding-top: 1.5rem;
 		background-color: var(--header-color-white-1);
 		box-shadow: 0 1rem 4rem #22222222;
 		opacity: 0;
@@ -1362,7 +1362,7 @@ a {
 
 	._flyoutWrapper_1bx67_1 ._tabPanelLeftArea_1bx67_77 {
 		display: grid;
-		grid-template-columns: 200px 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		gap: var(--desktop-drawer__x-section-padding);
 		margin-right: var(--desktop-drawer__x-section-padding)
 	}
@@ -1414,7 +1414,7 @@ a {
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		padding-bottom: 0.5rem;
-		margin-bottom: 1.25rem;
+		margin-bottom: 1rem;
 	}
 
 	._flyoutWrapper_1bx67_1 ._tabSection__name_1bx67_114:before {
@@ -1423,7 +1423,8 @@ a {
 		content: "";
 		width: 100%;
 		height: 1px;
-		background-color: var(--color-gray-20)
+		background-color: var(--color-gray-20);
+        display: none;
 	}
 }
 
