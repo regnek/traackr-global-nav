@@ -29,7 +29,6 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     });
 
     tab.addEventListener('mouseout', e => {
-        console.log(e.toElement);
         if (e.toElement != menuPanel && e.toElement != siteHeaderArrow && e.toElement != tab) {
             let a = e.toElement;
             const els = [];
@@ -38,7 +37,7 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
                 a = a.parentNode;
             }
         
-            if (!els.includes(tab.id)) {    
+            if (!els.includes(tab.id) && !(els.includes(tab.getAttribute('aria-controls')))) {    
                 menuPanel.classList.remove('state--open');
                 siteHeaderArrow.classList.remove('show-arrow');
                 menuPanel.querySelector('.global-navigation-open-tab').classList.remove('global-navigation-open-tab');
@@ -55,6 +54,8 @@ menuPanel.addEventListener('mouseout', e => {
         els.unshift(a.id);
         a = a.parentNode;
     }
+
+
 
     if (!els.includes('flyoutWrapper') && !els.includes('siteHeaderArrow') && !els.includes(activeTab.getAttribute('aria-controls')) && !els.includes(activeTab.id)) {
         menuPanel.classList.remove('state--open');
