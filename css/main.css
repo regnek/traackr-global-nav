@@ -1268,10 +1268,12 @@ a {
     transition-property: transform;
     transition-duration: 250ms;
     z-index: 9;
+    opacity: 0;
 }
 
 #siteHeaderArrow.show-arrow {
     transform: translateY(0) translateX(var(--siteHeaderArrowOffset)) rotate(45deg);
+    opacity: 1;
 }
 
 ._tabPanelLeftArea_1bx67_77 {
