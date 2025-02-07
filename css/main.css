@@ -451,7 +451,7 @@ a {
 	height: var(--header--height);
 	display: grid;
 	grid-template-columns: var(--mobile-main-template-columns);
-	background-color: var(--header-background-color);
+	background-color: transparent;
 	z-index: var(--z-index-front-content)
 }
 
@@ -1058,7 +1058,7 @@ a {
     height: 2.25rem;
 	align-self: center;
 	color: var(--color-gray-95);
-    background: var(--color-gray-10);
+    background: rgba(0, 0, 0, 0.05);
 	border: 0;
 	border-radius: 7px;
 	text-decoration: none;
@@ -1068,7 +1068,7 @@ a {
 }
 
 ._ctaResponsiveButtonLink_12l1f_36 {
-    background: #fff;
+    background: transparent;
 }
 
 @media (min-width: 1120px) {
@@ -1085,7 +1085,7 @@ a {
 		transition-property: color;
 		transition-duration: var(--transition-duration-long);
 		color: var(--color-gray-95);
-        background: var(--color-gray-10);
+        background: rgba(0, 0, 0, 0.05);
 		font-smooth: always;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -1096,13 +1096,13 @@ a {
 	}
 
     ._ctaResponsiveButtonLink_12l1f_36 {
-        background: #fff;
+        background: transparent;
         margin-right: 0.5rem;
     }
 
     ._ctaResponsiveButtonLink_12l1f_36:hover,
 	._ctaResponsiveButtonLink_12l1f_37:hover {
-        background: var(--color-gray-20);
+        background: rgba(0, 0, 0, 0.085);
 		text-decoration: none;
 	}
 
