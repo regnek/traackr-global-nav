@@ -1280,6 +1280,21 @@ a {
     margin-top: 1.5rem;
 }
 
+
+
+/* VISUAL MODE – LIGHT/DARK MODE TOGGLE */
+#visual-mode-toggle {
+	width: 2rem;
+	height: 2rem;
+	background: blue;
+}
+
+.dark #visual-mode-toggle {
+	background: red;
+}
+
+
+
 @media (min-width: 1120px) {
 	._flyoutWrapper_1bx67_1 {
         --translateX-value: 0;
