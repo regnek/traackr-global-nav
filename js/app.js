@@ -1,67 +1,9 @@
-// set/get dark mode
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
-  
-  function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-  
-  function setVDarkMode(mode) {
-    console.log(mode);
-    let darkMode = getCookie("darkMode");
-    if (darkMode != "") {
-        console.log(darkMode);
-    } else {
-      if (mode != "" && mode != null && mode != undefined) {
-        setCookie("darkMode", mode, 365);
-        console.log(darkMode + 'sup');
-      }
-    }
-  }
-
-// const setVisualMode = () => {
-//     const bcl = document.body.classList,
-//           currentMode = getCookie('darkMode');
-//     if (bcl.contains('dark')) {
-//         bcl.remove('dark');
-//         document.cookie = 'darkMode=false';
-//     } else {
-//         bcl.add('dark');
-//         document.cookie = 'darkMode=true';
-//     }
-//     console.log(currentMode);
-// }
-
 // update these variables to reference shadow root instead of document when needed
 const traackrGlobalNavigation = document.getElementById('traackr-global-navigation'),
       menuPanel = document.getElementById('flyoutWrapper'),
-      siteHeaderArrow = document.getElementById('siteHeaderArrow'),
-      visualModeToggle = document.getElementById('visual-mode-toggle');
+      siteHeaderArrow = document.getElementById('siteHeaderArrow');
 
 let activeTab;
-
-
-
-visualModeToggle.addEventListener('click', () => {
-    console.log('hey');
-    setDarkMode('true');
-});
-
 
 traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('mouseover', () => {

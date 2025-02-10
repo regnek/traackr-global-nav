@@ -455,10 +455,6 @@ a {
 	z-index: var(--z-index-front-content)
 }
 
-.dark-mode ._main-navigation_znbpc_74 {
-	background: blue;
-}
-
 @media (min-width: 1120px) {
 	._main-navigation_znbpc_74 {
 		grid-template-columns: var(--desktop-main-template-columns);
@@ -1285,17 +1281,6 @@ a {
 }
 
 
-
-/* VISUAL MODE – LIGHT/DARK MODE TOGGLE */
-#visual-mode-toggle {
-	width: 2rem;
-	height: 2rem;
-	background: blue;
-}
-
-.dark #visual-mode-toggle {
-	background: red;
-}
 
 
 
