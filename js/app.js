@@ -1,9 +1,27 @@
 // update these variables to reference shadow root instead of document when needed
 const traackrGlobalNavigation = document.getElementById('traackr-global-navigation'),
       menuPanel = document.getElementById('flyoutWrapper'),
-      siteHeaderArrow = document.getElementById('siteHeaderArrow');
+      siteHeaderArrow = document.getElementById('siteHeaderArrow'),
+      hamburgerMenuTrigger = document.getElementById('hamburger-menu-trigger');
 
 let activeTab;
+
+hamburgerMenuTrigger.addEventListener('click', () => {
+    const currentlyOpen = hamburgerMenuTrigger.getAttribute('aria-expanded');
+    toggleHamburgerMenu(currentlyOpen);
+});
+
+function toggleHamburgerMenu(currentlyOpen) {
+    if (currentlyOpen == 'true') {
+        hamburgerMenuTrigger.setAttribute('aria-label', 'Open menu');
+        hamburgerMenuTrigger.setAttribute('aria-expanded', 'false');
+        hamburgerMenuTrigger.querySelector('div').classList.remove('_hamburger-button__icon--state-open_a7ow8_52');
+    } else {
+        hamburgerMenuTrigger.setAttribute('aria-label', 'Close menu');
+        hamburgerMenuTrigger.setAttribute('aria-expanded', 'true');
+        hamburgerMenuTrigger.querySelector('div').classList.add('_hamburger-button__icon--state-open_a7ow8_52');
+    }
+}
 
 traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('mouseover', () => {
@@ -15,7 +33,7 @@ traackrGlobalNavigation.querySelectorAll('.tab').forEach(tab => {
               tabWidth = tab.getBoundingClientRect().width;
         siteHeaderArrow.style.setProperty('--siteHeaderArrowOffset', `${(distanceFromLeft + tabWidth / 2) - 12}px`);
         siteHeaderArrow.classList.add('show-arrow');
-        menuPanel.style.setProperty('--translateX-value', distanceFromLeft - 80 + 'px');
+        menuPanel.style.setProperty('--translateX-value', distanceFromLeft - 48 + 'px');
         menuPanel.classList.add('state--open');
 
         traackrGlobalNavigation.querySelectorAll('.global-navigation-tab-panel').forEach(panel => {
