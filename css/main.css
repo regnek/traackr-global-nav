@@ -304,7 +304,7 @@ a {
 
 /* VARIABLES */
 ._header_znbpc_12 {
-    --glow-purple: #6246B4;
+    --glow-purple: #222222;
     --desktop-content--x-padding: 24px;
     --desktop-content--width: calc(100% - var(--desktop-content--x-padding) * 2);
     --transition-duration-short: 75ms;
